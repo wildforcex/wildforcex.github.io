@@ -24,7 +24,7 @@ body {
   margin: 0;
   min-height: 100vh;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
   font-family: "Segoe UI", Tahoma, sans-serif;
   color: var(--white);
   background: var(--bg);
@@ -89,10 +89,9 @@ input {
 }
 .page-dashboard {
   width: 100vw;
-  height: 100vh;
   min-height: 100vh;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -188,7 +187,7 @@ input {
   aspect-ratio: 2835 / 1600;
   flex: 0 0 auto;
   margin: 0 auto;
-  background: url("../BG.png") center / 100% 100% no-repeat;
+  background: url("BG.png") center / 100% 100% no-repeat;
   overflow: hidden;
 }
 .info-panel {
@@ -437,8 +436,8 @@ input {
   .page-dashboard {
     display: block;
     width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow: auto;
     padding: 0;
   }
 

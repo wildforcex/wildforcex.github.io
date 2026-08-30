@@ -20,9 +20,24 @@ while ($true) {
                 git diff --cached --quiet -- data.json
                 if ($LASTEXITCODE -eq 1) {
                     git commit -m "Auto update sensor data $timestamp" | Out-Null
-                    git pull --rebase origin main | Out-Null
-                    git push origin main | Out-Null
-                    Write-Host "[$timestamp] Pushed data.json to GitHub"
+
+                    $pushSucceeded = $false
+                    for ($attempt = 1; $attempt -le 3; $attempt++) {
+                        git push origin main
+                        if ($LASTEXITCODE -eq 0) {
+                            $pushSucceeded = $true
+                            break
+                        }
+
+                        git pull --rebase origin main | Out-Null
+                    }
+
+                    if ($pushSucceeded) {
+                        Write-Host "[$timestamp] Pushed data.json to GitHub"
+                    }
+                    else {
+                        Write-Host "[$timestamp] Push failed after retries"
+                    }
                 }
             }
         }
@@ -31,5 +46,5 @@ while ($true) {
         Write-Host "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] Push failed: $($_.Exception.Message)"
     }
 
-    Start-Sleep -Seconds 3
+    Start-Sleep -Seconds 1
 }

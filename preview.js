@@ -58,7 +58,7 @@ function startRealtimeUpdates() {
 
   setInterval(() => {
     loadJson().catch(handleLoadError);
-  }, 20000);
+  }, 1000);
 }
 
 startRealtimeUpdates();

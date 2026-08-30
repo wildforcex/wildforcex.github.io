@@ -1,4 +1,4 @@
-const statusLabels = ["ยืนตรง", "ล้ม", "เอียงซ้าย", "เอียงขวา"];
+const statusLabels = ["ปกติ", "ไม่ปกติ"];
 let lastSnapshot = null;
 
 function setText(id, value) {

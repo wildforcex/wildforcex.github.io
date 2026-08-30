@@ -15,13 +15,13 @@ while ($true) {
                 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
                 Set-Location $repoPath
-                git pull --rebase origin main
-                git add data.json
+                git add --force data.json
 
                 git diff --cached --quiet -- data.json
                 if ($LASTEXITCODE -eq 1) {
-                    git commit -m "Auto update sensor data $timestamp"
-                    git push origin main
+                    git commit -m "Auto update sensor data $timestamp" | Out-Null
+                    git pull --rebase origin main | Out-Null
+                    git push origin main | Out-Null
                     Write-Host "[$timestamp] Pushed data.json to GitHub"
                 }
             }

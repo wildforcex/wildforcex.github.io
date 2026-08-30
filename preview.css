@@ -439,39 +439,98 @@ input {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    padding: 0;
   }
 
   .dashboard {
-    width: 100vw;
+    width: calc(100vw - 10px);
     max-width: 100vw;
     height: auto;
     min-width: 0;
+    margin: 0 auto;
+    background: #d8d9d7;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .brand-header {
+    padding: 0.4rem 0.4rem 0.2rem;
+    gap: 0.3rem;
+  }
+
+  .brand-logo-cover {
+    width: min(62vw, 320px);
+    height: clamp(30px, 7vw, 52px);
+  }
+
+  .brand-word {
+    font-size: clamp(20px, 7vw, 42px);
   }
 
   .info-panel {
-    top: 42%;
-    left: 30%;
-    width: 24%;
-    padding: 1.2% 1%;
+    top: 31%;
+    left: 7%;
+    width: 42%;
+    padding: 3% 2%;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .field {
+    margin-bottom: 4%;
+  }
+
+  .flabel {
+    font-size: 10px;
   }
 
   .value,
-  .status-label,
-  .metric-value {
-    letter-spacing: -0.02em;
+  .status-label {
+    font-size: 12px;
   }
 
-  .map-panel,
+  .status-icon-wrap {
+    width: 26px;
+    height: 26px;
+  }
+
+  .status-icon {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .map-panel {
+    top: 15%;
+    left: 54%;
+    width: 38%;
+    height: 22%;
+  }
+
   .metric-panel {
-    left: 58%;
-    width: 34%;
+    left: 54%;
+    width: 38%;
+    height: 10%;
+    top: 41%;
+  }
+
+  .hr-panel {
+    top: 50%;
+  }
+
+  .spo2-panel {
+    top: 63%;
+  }
+
+  .metric-value {
+    font-size: 16px;
   }
 
   .alert-banner {
-    left: 56%;
-    width: 36%;
-    font-size: 11px;
-    padding: 8px 6px;
+    left: 50%;
+    top: 9%;
+    width: 42%;
+    font-size: 9px;
+    padding: 7px 5px;
   }
 }
 
@@ -479,48 +538,70 @@ input {
   .dashboard {
     width: 100vw;
     max-width: 100vw;
-    aspect-ratio: 2835 / 1600;
+    height: auto;
+    aspect-ratio: 1.1 / 1.2;
+  }
+
+  .brand-header {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .brand-logo-cover {
+    width: 54vw;
   }
 
   .info-panel {
-    top: 40.5%;
-    left: 27%;
-    width: 29%;
-    padding: 1.3% 1%;
+    top: 30%;
+    left: 6%;
+    width: 43%;
+    padding: 3% 2%;
   }
 
-  .field {
-    margin-bottom: 6%;
+  .value {
+    font-size: 10px;
+    padding: 3% 5%;
   }
 
   .flabel {
     font-size: 9px;
   }
 
-  .value {
-    font-size: 10px;
-    padding: 3% 4%;
-  }
-
   .status-label {
     font-size: 10px;
   }
 
-  .map-panel,
+  .map-panel {
+    top: 14%;
+    left: 53%;
+    width: 40%;
+    height: 20%;
+  }
+
   .metric-panel {
-    left: 59%;
-    width: 33%;
+    left: 53%;
+    width: 40%;
+    height: 9%;
+  }
+
+  .hr-panel {
+    top: 48%;
+  }
+
+  .spo2-panel {
+    top: 61%;
   }
 
   .metric-value {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .alert-banner {
-    left: 55%;
-    width: 39%;
-    top: 15%;
-    font-size: 9px;
+    left: 51%;
+    width: 42%;
+    top: 8%;
+    font-size: 8px;
+    padding: 6px 4px;
   }
 }
 

@@ -91,7 +91,7 @@ input {
   width: 100vw;
   min-height: 100vh;
   padding: 12px;
-  overflow: visible;
+  overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -189,7 +189,7 @@ input {
   flex: 0 0 auto;
   margin: 0 auto;
   background: url("BG.png") center / cover no-repeat;
-  overflow: visible;
+  overflow: hidden;
 }
 .info-panel {
   position: absolute;
@@ -202,8 +202,9 @@ input {
   padding: 1.2% 0.8%;
   border: 0;
   border-radius: 20px;
-  background: #d8dad9;
+  background: rgba(216, 218, 217, 0.95);
   color: #111;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 .roster-panel {
   display: none;
@@ -438,7 +439,7 @@ input {
     display: block;
     width: 100vw;
     min-height: 100vh;
-    overflow: visible;
+    overflow: hidden;
     padding: 0;
   }
 
@@ -451,7 +452,7 @@ input {
     margin: 0 auto;
     background: url("BG.png") center / cover no-repeat;
     border-radius: 0;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .brand-header {
